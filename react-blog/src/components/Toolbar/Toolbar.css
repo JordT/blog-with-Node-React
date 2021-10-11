@@ -1,0 +1,19 @@
+.ToolbarContainer{
+    color: #61dafb; 
+    text-align: left;
+    padding-left: 25px;
+    background-color: #282c34;
+    display: flex ;
+    flex-direction: row;
+}
+
+.h1 {
+    color: #61dafb; 
+    text-align: left;
+    padding-left: 25px;
+
+}
+
+.h1:hover{
+    color: white;
+}
