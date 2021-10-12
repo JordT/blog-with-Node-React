@@ -46,14 +46,26 @@ app.post("/blogger", (req, res) => {
   });
 
 Blogger.create(newBlogger)
-  .then(function(db) {
-      console.log(db);
-      res.json(db);
+  .then(function(dbProduct) {
+      console.log(dbProduct);
+      res.json(dbProduct);
   })
   .catch(function(err) {
       console.log(err);
       res.json(err);
   });
+});
+
+app.get("/blogger/:id", (req, res) => {
+
+  Blogger.findOne({ _id: req.params.id })
+      .then(function(dbProduct) {
+          res.json(dbProduct);
+      })
+      .catch(function(err) {
+         console.log(err);
+         res.json(err);
+      });
 });
 
 app.listen(port, () => {
