@@ -5,7 +5,7 @@ import Toolbar from './components/Toolbar/Toolbar';
 function App() {
   //function that will hopefully call one of the server apis
   const callAPI = () => {
-    fetch('/api')
+    fetch('http://localhost:3001/api').then(res => console.log(res.text()))
   }
   
   return (
