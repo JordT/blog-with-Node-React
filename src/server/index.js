@@ -6,7 +6,7 @@
 const express = require('express')
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const Blogger = require("/Users/adamheeps/development/blog-with-Node-React/src/models/Blogger.js");
+const Blogger = require("../models/Blogger.js");
 
 const app = express()
 const port = 3001
@@ -31,7 +31,7 @@ app.use(
 app.use(bodyParser.json());
 
 mongoose.connect(db, {useNewUrlParser: true})
-    .then(() => console.log("Mongo connected"))
+    .then(() => console.log(`Mongo connected @ ${db}`))
     .catch(err => console.log(err));
 
 app.get('/api', (req, res) => {
