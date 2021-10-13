@@ -1,11 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 import Toolbar from './components/Toolbar/Toolbar';
+import axios from 'axios';
 
 function App() {
   //function that will hopefully call one of the server apis
-  const callAPI = () => {
-    fetch('http://localhost:3001/api').then(res => console.log(res.text()))
+  const user = {
+    "name": "Jordan",
+    "city": "Edinburgh",
+  }
+
+  const dbPost = () => {
+    axios
+      .post('http://localhost:3001/blogger', user)
+      .then(() => console.log('User Created'))
   }
   
   return (
@@ -19,7 +27,7 @@ function App() {
         </p>
         
         {/* button to test API call */}
-        <button onClick={callAPI}>Test Express API</button>
+        <button onClick={dbPost}>DB Post</button>
         <a
           className="App-link"
           href="https://reactjs.org"
