@@ -3,7 +3,8 @@
 # dependencies
 /.pnp
 .pnp.js
-node_modules/
+!node_modules/
+node_modules/*
 !node_modules/react-scripts/
 
 # testing
