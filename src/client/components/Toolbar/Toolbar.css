@@ -11,9 +11,25 @@
     color: #61dafb; 
     text-align: left;
     padding-left: 25px;
-
 }
 
 .h1:hover{
     color: white;
+}
+
+@media screen and (max-width: 601px) {
+    .ToolbarContainer{
+        position: relative;
+        display: inline-block;
+    
+    }
+    .h1{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+          
+    }
 }
