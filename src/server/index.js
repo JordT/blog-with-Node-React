@@ -10,7 +10,7 @@ const Blogger = require("../models/Blogger.js");
 
 const app = express()
 const port = 3001
-const db = "mongodb://localhost/blogdb";
+const db = "mongodb+srv://jordt-user:kFw7bfIgM7asHRTa@cluster0.dyqmu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 app.use(function (req, res, next) {
   // Authorizing API call to come from React front end on port 3000
