@@ -9,6 +9,7 @@
 
 # production
 /build
+/src/server/config.js
 
 # misc
 .DS_Store
