@@ -1,14 +1,25 @@
 import React from "react";
 import "./DBPostForm.css";
-import App from "../../App.js";
+import axios from "axios";
 
 export default function DBPostForm() {
-  const [name, setName] = React.useState("");
-  const [city, setCity] = React.useState("");
+  var [name, setName] = React.useState("");
+  var [city, setCity] = React.useState("");
+
+  const blogger = {
+    "name": name,
+    "city": city
+};
+
+const dbPost = (b) => {
+    axios
+      .post("http://localhost:3001/blogger", b)
+      .then(() => console.log("User Created"));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`${name} ${city}`);
+    dbPost(blogger);
   };
 
   return (
