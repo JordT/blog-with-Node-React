@@ -7,8 +7,8 @@ import DBPostForm from "./components/DBPostForm/DBPostForm";
 function App() {
   //function that will hopefully call one of the server apis
   const user = {
-    name: "Jordan",
-    city: "Edinburgh",
+    name: DBPostForm.name,
+    city: DBPostForm.city,
   };
 
   const dbPost = () => {
