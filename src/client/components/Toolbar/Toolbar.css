@@ -8,6 +8,7 @@
 }
 
 .h1 {
+    display: flex;
     color: #61dafb; 
     text-align: left;
     padding-left: 25px;
@@ -17,10 +18,51 @@
     color: white;
 }
 
+.Dropdown-menu {
+    display: none;
+}
+
+.burger {
+    display:none;
+}
+
 @media screen and (max-width: 601px) {
     .ToolbarContainer{
-        position: static;
+        position: relative;
         display: inline-block;
         width: 100vw;
+        background-color: #393f4b;
+        padding: 15px 0px 15px 20px;
+    }
+
+    .ToolbarContainer:hover .h1 {display: block;}
+
+    .Dropdown-menu{
+        display: inline;
+        color: #61dafb; 
+        text-align: left;
+        padding-left: 25px;
+        width: 100vw;
+        background-color: #393f4b;
+        border: none;
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+    .Dropdown-menu:hover{
+        color: white;
+    }
+
+    .h1 {
+        display: none ;
+        color: #61dafb; 
+        text-align: left;
+        padding-left: 25px;
+        font-weight: bolder;
+        font-size: large;
+    }
+    
+    .h1:hover{
+        display: inline;
+        color: white;
     }
 }
