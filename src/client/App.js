@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Toolbar from "./components/Toolbar/Toolbar";
-import axios from "axios";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
 
 function App() {

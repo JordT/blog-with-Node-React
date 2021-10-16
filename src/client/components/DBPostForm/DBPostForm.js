@@ -3,6 +3,9 @@ import "./DBPostForm.css";
 import axios from "axios";
 
 export default function DBPostForm() {
+
+  //improvement suggestion - could our state could be stored in a blogger object?
+
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
 
