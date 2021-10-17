@@ -1,7 +1,6 @@
 import React from "react";
 import "./DBPostForm.css";
 import axios from "axios";
-import Logo from '../Logo/Logo'
 
 export default function DBPostForm(props) {
 
@@ -24,8 +23,8 @@ const dbPost = (b) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dbPost(blogger);
-    // How does this event handle change state in App.js?
-    props.test("App-logo1")
+    // Here i've passed a function as props, this means you can set the speed here...
+    props.logoSpeedUp();
   };
 
   return (

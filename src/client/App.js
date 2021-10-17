@@ -9,10 +9,17 @@ function App() {
 
   const [logoSpeed, setLogoSpeed] = React.useState("App-logo");
 
+  const incLogoSpeed = () => {
+    setLogoSpeed("App-logo1");
+    setTimeout(() => {
+        setLogoSpeed("App-logo")
+    }, 1000);
+  }
+
   return (
     <div className="App">
       <Toolbar />
-      <DBPostForm test={setLogoSpeed}/>
+      <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
       <header className="App-header">
         <Logo speed={logoSpeed}/>
         {/* commented out as created replacement component */}
