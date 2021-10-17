@@ -2,12 +2,22 @@
     height: 40vmin;
     pointer-events: none;
   }
+
+.App-logo1 {
+    height: 40vmin;
+    pointer-events: none;
+}
+  
   
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 2s linear;
         }
+
+    .App-logo1 {
+        animation: App-logo-spin infinite 1s linear;
     }
+}
 
 @keyframes App-logo-spin {
     from {
