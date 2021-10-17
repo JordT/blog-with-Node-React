@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Logo from './components/Logo/Logo.js'
 import Toolbar from "./components/Toolbar/Toolbar";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
 
@@ -10,6 +11,7 @@ function App() {
       <Toolbar />
       <DBPostForm />
       <header className="App-header">
+        <Logo />
         <img src={logo} className="App-logo" alt="logo" />
 
         <p>
