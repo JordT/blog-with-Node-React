@@ -22,8 +22,6 @@ function App() {
       <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
       <header className="App-header">
         <Logo speed={logoSpeed}/>
-        {/* commented out as created replacement component */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <p>
           Edit <code>src/App.js</code> and save to reload.
