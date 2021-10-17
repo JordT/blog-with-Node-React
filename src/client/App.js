@@ -12,7 +12,8 @@ function App() {
       <DBPostForm />
       <header className="App-header">
         <Logo />
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* commented out as created replacement component */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <p>
           Edit <code>src/App.js</code> and save to reload.
