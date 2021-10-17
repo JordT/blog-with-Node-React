@@ -2,16 +2,12 @@ import React from 'react';
 import logo from '../../logo.svg';
 import './Logo.css';
 
-const Logo = () => {
+const Logo = (props) => {
     // - on click needs to call a function here, that manipulates local state?
-    const [logoSpeed, setLogoSpeed] = React.useState("App-logo");
 
-    // const setClass = () => {
-    //     return "App-logo1"
-    // }
-    console.log(logoSpeed)
+    console.log(props.speed)
     return <img src={logo} 
-        className={logoSpeed.toString()}
+        className={props.speed}
         alt="logo" />;
 }
 
