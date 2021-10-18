@@ -5,6 +5,7 @@ import Logo from './components/Logo/Logo.js'
 import Toolbar from "./components/Toolbar/Toolbar";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
 import about from '../../src/client/pages/about'
+import blogPage from '../client/pages/blog-page/BlogPage'
 import {Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
     <Switch>
       <Route path="/about" component={about}/>
+      <Route path="/blog" component={blogPage}/>
       <div className="App">
         <Toolbar />
         <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
