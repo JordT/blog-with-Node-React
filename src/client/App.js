@@ -1,16 +1,27 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
+import React from 'react';
 import "./App.css";
+import Logo from './components/Logo/Logo.js'
 import Toolbar from "./components/Toolbar/Toolbar";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
 
 function App() {
 
+  const [logoSpeed, setLogoSpeed] = React.useState("App-logo");
+
+  const incLogoSpeed = () => {
+    setLogoSpeed("App-logo1");
+    setTimeout(() => {
+        setLogoSpeed("App-logo")
+    }, 1000);
+  }
+
   return (
     <div className="App">
       <Toolbar />
-      <DBPostForm />
+      <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Logo speed={logoSpeed}/>
 
         <p>
           Edit <code>src/App.js</code> and save to reload.

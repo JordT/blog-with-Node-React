@@ -2,10 +2,9 @@ import React from "react";
 import "./DBPostForm.css";
 import axios from "axios";
 
-export default function DBPostForm() {
+export default function DBPostForm(props) {
 
-  //improvement suggestion - could our state could be stored in a blogger object?
-
+  //improvement suggestion - could our state could be stored directly in a blogger object?
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
 
@@ -23,6 +22,8 @@ const dbPost = (b) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dbPost(blogger);
+    // Here i've passed a function as props, this means you can set the speed here...
+    props.logoSpeedUp();
   };
 
   return (
