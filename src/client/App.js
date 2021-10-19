@@ -4,6 +4,7 @@ import "./App.css";
 import Logo from './components/Logo/Logo.js'
 import Toolbar from "./components/Toolbar/Toolbar";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
+import DBGetForm from "./components/DBGetForm/DBGetForm";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <div className="App">
       <Toolbar />
       <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
+      <DBGetForm logoSpeedUp={() => incLogoSpeed()}/>
       <header className="App-header">
         <Logo speed={logoSpeed}/>
 

@@ -68,7 +68,7 @@ app.post("/blogger", (req, res) => {
 app.get("/blogger/:id", (req, res) => {
   Blogger.findOne({ _id: req.params.id })
     .then(function (dbProduct) {
-      res.json(dbProduct);
+      console.log(dbProduct);
     })
     .catch(function (err) {
       console.log(err);
