@@ -4,6 +4,9 @@ import "./App.css";
 import Logo from './components/Logo/Logo.js'
 import Toolbar from "./components/Toolbar/Toolbar";
 import DBPostForm from "./components/DBPostForm/DBPostForm";
+import about from '../../src/client/pages/about'
+import blogPage from '../client/pages/blog-page/BlogPage'
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
 
@@ -17,25 +20,29 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Toolbar />
-      <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
-      <header className="App-header">
-        <Logo speed={logoSpeed}/>
+    <Switch>
+      <Route path="/about" component={about}/>
+      <Route path="/blog" component={blogPage}/>
+      <div className="App">
+        <Toolbar />
+        <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
+        <header className="App-header">
+          <Logo speed={logoSpeed}/>
 
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    </Switch>
   );
 }
 
