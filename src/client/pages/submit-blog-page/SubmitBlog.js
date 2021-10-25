@@ -1,16 +1,14 @@
-// Page where you can view blogs
-
 import React from "react";
 import Toolbar from "../../components/Toolbar/Toolbar";
 
-const BlogPage = () => {
+const SubmitBlog = () => {
 
     return (
         <> 
         <Toolbar />
-        <h1>A blog page</h1>
+        <h1>A page to submit blogs</h1>
         </>)
     
 }
 
-export default BlogPage;
+export default SubmitBlog;
