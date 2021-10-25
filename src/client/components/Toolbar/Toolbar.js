@@ -5,9 +5,9 @@ const Toolbar = () => {
     return (
         <div className="ToolbarContainer">
             <div class="Dropdown-menu">Menu</div>
-                <h1 className="h1">Home</h1>
-                <h1 className="h1">About</h1>
-                <h1 className="h1">Blog Entries</h1>
+                <a className="h1" href="http://localhost:3000/">Home</a>
+                <a className="h1" href="http://localhost:3000/about">About</a>
+                <a className="h1" href="http://localhost:3000/blog">Blog Entries</a>
         </div>
     )
 }
