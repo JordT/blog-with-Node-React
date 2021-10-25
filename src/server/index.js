@@ -68,10 +68,12 @@ app.post("/blogger", (req, res) => {
 app.get("/blogger/:id", (req, res) => {
   Blogger.findOne({ _id: req.params.id })
     .then(function (dbProduct) {
+      console.log(dbProduct);
       res.json(dbProduct);
     })
-    .catch(function (err) {
-      console.log(err);
+    .catch((err) => {
+      console.log("[server/index.js] Incorrect ID submitted")
+      // console.log(err);
       res.json(err);
     });
 });
