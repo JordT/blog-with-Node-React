@@ -9,7 +9,7 @@ import '../../App.css'
 const BlogPage = () => {
 
     return (
-        <div> 
+        <div className='App'> 
         <Toolbar />
         <DBGetForm />
         </div>)
