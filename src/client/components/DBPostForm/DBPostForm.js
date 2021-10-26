@@ -7,10 +7,12 @@ export default function DBPostForm(props) {
   //improvement suggestion - could our state could be stored directly in a blogger object?
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
+  var [blogText, setBlogText] = React.useState("");
 
   const blogger = {
     "name": name,
-    "city": city
+    "city": city,
+    "blogText": blogText
 };
 
 const dbPost = (b) => {
@@ -33,8 +35,8 @@ const dbPost = (b) => {
         <label>
           Name:
           <input
-            type="name"
-            name="name"
+            type="text"
+            name="name field"
             value={name}
             onChange={(n) => setName(n.target.value)}
             required
@@ -42,9 +44,16 @@ const dbPost = (b) => {
           City:
           <input
             type="text"
-            name="Name"
+            name="city field"
             value={city}
             onChange={(c) => setCity(c.target.value)}
+          />
+          Your blog:
+          <input
+            type="text"
+            name="blog field"
+            value={blogText}
+            onChange={(c) => setBlogText(c.target.value)}
             required
           />
         </label>
