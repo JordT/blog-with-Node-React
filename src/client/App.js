@@ -29,7 +29,7 @@ function App() {
         </Route>
         <Route path="/submitblog" component={SubmitBlog}/>
         <Route path="/">
-          <HomePage speed={logoSpeed} />
+          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()}/>
         </Route>
       </Switch>
     </BrowserRouter>

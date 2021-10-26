@@ -13,13 +13,10 @@ const HomePage = (props) => {
     return (
         <div className="App"> 
             <Toolbar />
-            <DBPostForm />   
-            {/* logoSpeedUp={() => incLogoSpeed()} */}
+            <DBPostForm logoSpeedUp={props.logoSpeedUp}/>   
             <DBGetForm />
-            {/* logoSpeedUp={() => incLogoSpeed()} */}
             <header className="App-header">
                 <Logo speed={props.speed} />
-                {/* speed={logoSpeed} */}
             </header>
         </div>)
     
