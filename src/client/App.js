@@ -23,10 +23,23 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Switch>
-      <Route path="/home" component={HomePage} speed={logoSpeed}/>
-      <Route path="/blog" component={BlogPage}/>
-      <Route path="/submitblog" component={SubmitBlog}/>
+      <Switch>
+        <Route path="/blog">
+            <BlogPage />
+        </Route>
+        <Route path="/submitblog" component={SubmitBlog}/>
+        <Route path="/">
+          <HomePage speed={logoSpeed} />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+      /* 
+      commented out to test new routes.
       <div className="App">
         <Toolbar />
         <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
@@ -34,10 +47,4 @@ function App() {
         <header className="App-header">
           <Logo speed={logoSpeed}/>
         </header>
-      </div>
-    </Switch>
-    </BrowserRouter>
-  );
-}
-
-export default App;
+      </div> */

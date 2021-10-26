@@ -12,7 +12,6 @@ const HomePage = (props) => {
 
     return (
         <div className="App"> 
-            <h1>{props.speed}</h1>
             <Toolbar />
             <DBPostForm />   
             {/* logoSpeedUp={() => incLogoSpeed()} */}
@@ -22,12 +21,6 @@ const HomePage = (props) => {
                 <Logo speed={props.speed} />
                 {/* speed={logoSpeed} */}
             </header>
-            <h1>The Home Page</h1>
-
-            <p>
-             Edit <code>src/App.js</code> and save to reload.
-            </p>
-
         </div>)
     
 }
