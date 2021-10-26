@@ -1,10 +1,6 @@
 // import logo from "./logo.svg";
 import React from 'react';
 import "./App.css";
-import Logo from './components/Logo/Logo.js'
-import Toolbar from "./components/Toolbar/Toolbar";
-import DBPostForm from "./components/DBPostForm/DBPostForm";
-import DBGetForm from "./components/DBGetForm/DBGetForm";
 import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import HomePage from './pages/home-page/HomePage';
 import SubmitBlog from './pages/submit-blog-page/SubmitBlog';
