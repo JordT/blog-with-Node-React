@@ -34,7 +34,7 @@ const dbPost = (b) => {
       <form onSubmit={handleSubmit}>
         <div className='user-input'>
           <label>
-          Name:
+          Name:___
           <input
             type="text"
             name="name field"
@@ -42,18 +42,22 @@ const dbPost = (b) => {
             onChange={(n) => setName(n.target.value)}
             className='input-box'
             required
+            placeholder="Enter your name"
+            maxlength="25"
           />
         </label>
         </div>
         <div className='user-input'>
           <label>
-          City:
+          City:_____
           <input
             type="text"
             name="city field"
             value={city}
             onChange={(c) => setCity(c.target.value)}
             className='input-box'
+            placeholder="Enter where you live"
+            maxlength="25"
           />
           </label>
           </div>
@@ -65,8 +69,12 @@ const dbPost = (b) => {
             name="blog field"
             value={blogText}
             onChange={(c) => setBlogText(c.target.value)}
-            className='input-box'
+            className='input-box-blogtext'
             required
+            placeholder="Enter your blog here..."
+            maxlength="1000"
+            spellCheck="true"
+            autoCorrect="on"
           />
         </label>
         </div>
