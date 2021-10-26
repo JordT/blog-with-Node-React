@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
-      <Route path="/home" component={HomePage}/>
+      <Route path="/home" component={HomePage} speed={logoSpeed}/>
       <Route path="/blog" component={BlogPage}/>
       <Route path="/submitblog" component={SubmitBlog}/>
       <div className="App">
@@ -33,8 +33,6 @@ function App() {
         <DBGetForm logoSpeedUp={() => incLogoSpeed()}/>
         <header className="App-header">
           <Logo speed={logoSpeed}/>
-
-
         </header>
       </div>
     </Switch>
