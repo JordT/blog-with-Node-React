@@ -9,8 +9,12 @@ const BloggerSchema = new Schema({
   },
   city: {
     type: String,
-    required: true
+    required: false
   },
+  blogText: {
+    type: String, 
+    required: true
+  }
 });
 
 module.exports = Blogger = mongoose.model("Bloggers", BloggerSchema);

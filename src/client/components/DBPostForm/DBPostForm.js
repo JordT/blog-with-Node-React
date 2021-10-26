@@ -7,10 +7,12 @@ export default function DBPostForm(props) {
   //improvement suggestion - could our state could be stored directly in a blogger object?
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
+  var [blogText, setBlogText] = React.useState("");
 
   const blogger = {
     "name": name,
-    "city": city
+    "city": city,
+    "blogText": blogText
 };
 
 const dbPost = (b) => {
@@ -22,33 +24,63 @@ const dbPost = (b) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dbPost(blogger);
-    // Here i've passed a function as props, this means you can set the speed here...
-    props.logoSpeedUp();
+    // No logo on the submit blog page so I have removed it.
+    // props.logoSpeedUp();
   };
 
   return (
     <div className="DBPostForm">
-      <h3>Post a record to the database:</h3>
+      <h3>Submit a blog!</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="name"
-            name="name"
-            value={name}
-            onChange={(n) => setName(n.target.value)}
-            required
-          />
-          City:
+        <div className='user-input'>
+          <label>
+          Name:___
           <input
             type="text"
-            name="Name"
-            value={city}
-            onChange={(c) => setCity(c.target.value)}
+            name="name field"
+            value={name}
+            onChange={(n) => setName(n.target.value)}
+            className='input-box'
             required
+            placeholder="Enter your name"
+            maxlength="25"
           />
         </label>
-        <input type="submit" value="Submit" />
+        </div>
+        <div className='user-input'>
+          <label>
+          City:_____
+          <input
+            type="text"
+            name="city field"
+            value={city}
+            onChange={(c) => setCity(c.target.value)}
+            className='input-box'
+            placeholder="Enter where you live"
+            maxlength="25"
+          />
+          </label>
+          </div>
+          <div className='user-input'>
+          <label>
+          Your blog:
+          <input
+            type="text"
+            name="blog field"
+            value={blogText}
+            onChange={(c) => setBlogText(c.target.value)}
+            className='input-box-blogtext'
+            required
+            placeholder="Enter your blog here..."
+            maxlength="1000"
+            spellCheck="true"
+            autoCorrect="on"
+          />
+        </label>
+        </div>
+        <div>
+        <input type="submit" value="Submit" className="SubmitButton"/>
+        </div>
       </form>
     </div>
   );

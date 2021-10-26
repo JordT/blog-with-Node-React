@@ -25,8 +25,8 @@ export default function DBPostForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();   
     dbGet(id);
-    // Here i've passed a function as props, this means you can set the speed here...
-    props.logoSpeedUp();
+    // No logo on the submit blog page so I have removed it.
+    // props.logoSpeedUp();
   };
 
   return (

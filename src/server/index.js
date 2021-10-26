@@ -52,6 +52,7 @@ app.post("/blogger", (req, res) => {
   const newBlogger = new Blogger({
     name: req.body.name,
     city: req.body.city,
+    blogText: req.body.blogText
   });
 
   Blogger.create(newBlogger)
