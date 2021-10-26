@@ -30,34 +30,49 @@ const dbPost = (b) => {
 
   return (
     <div className="DBPostForm">
-      <h3>Post a record to the database:</h3>
+      <h3>Submit a blog!</h3>
       <form onSubmit={handleSubmit}>
-        <label>
+        <div className='user-input'>
+          <label>
           Name:
           <input
             type="text"
             name="name field"
             value={name}
             onChange={(n) => setName(n.target.value)}
+            className='input-box'
             required
           />
+        </label>
+        </div>
+        <div className='user-input'>
+          <label>
           City:
           <input
             type="text"
             name="city field"
             value={city}
             onChange={(c) => setCity(c.target.value)}
+            className='input-box'
           />
+          </label>
+          </div>
+          <div className='user-input'>
+          <label>
           Your blog:
           <input
             type="text"
             name="blog field"
             value={blogText}
             onChange={(c) => setBlogText(c.target.value)}
+            className='input-box'
             required
           />
         </label>
-        <input type="submit" value="Submit" />
+        </div>
+        <div>
+        <input type="submit" value="Submit" className="SubmitButton"/>
+        </div>
       </form>
     </div>
   );
