@@ -1,13 +1,10 @@
 // import logo from "./logo.svg";
 import React from 'react';
 import "./App.css";
-import Logo from './components/Logo/Logo.js'
-import Toolbar from "./components/Toolbar/Toolbar";
-import DBPostForm from "./components/DBPostForm/DBPostForm";
-import DBGetForm from "./components/DBGetForm/DBGetForm";
-import about from '../../src/client/pages/about'
-import blogPage from '../client/pages/blog-page/BlogPage'
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import HomePage from './pages/home-page/HomePage';
+import SubmitBlog from './pages/submit-blog-page/SubmitBlog';
+import BlogPage from '../client/pages/blog-page/BlogPage';
 
 function App() {
 
@@ -21,31 +18,17 @@ function App() {
   }
 
   return (
-
-    <Switch>
-      <Route path="/about" component={about}/>
-      <Route path="/blog" component={blogPage}/>
-      <div className="App">
-        <Toolbar />
-        <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
-       <DBGetForm logoSpeedUp={() => incLogoSpeed()}/>
-        <header className="App-header">
-          <Logo speed={logoSpeed}/>
-
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </Switch>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/blog">
+            <BlogPage />
+        </Route>
+        <Route path="/submitblog" component={SubmitBlog}/>
+        <Route path="/">
+          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()}/>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
