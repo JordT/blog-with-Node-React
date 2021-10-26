@@ -2,15 +2,17 @@
 
 import React from "react";
 import Toolbar from "../../components/Toolbar/Toolbar";
+import DBGetForm from '../../components/DBGetForm/DBGetForm';
+import '../../App.css'
 
 
 const BlogPage = () => {
 
     return (
-        <> 
+        <div> 
         <Toolbar />
-        <h1> blogs should be viewed here</h1>
-        </>)
+        <DBGetForm />
+        </div>)
     
 }
 
