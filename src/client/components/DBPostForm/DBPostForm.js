@@ -24,8 +24,8 @@ const dbPost = (b) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dbPost(blogger);
-    // Here i've passed a function as props, this means you can set the speed here...
-    props.logoSpeedUp();
+    // No logo on the submit blog page so I have removed it.
+    // props.logoSpeedUp();
   };
 
   return (
