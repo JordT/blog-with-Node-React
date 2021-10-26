@@ -33,14 +33,3 @@ function App() {
 }
 
 export default App;
-
-      /* 
-      commented out to test new routes.
-      <div className="App">
-        <Toolbar />
-        <DBPostForm logoSpeedUp={() => incLogoSpeed()}/>
-        <DBGetForm logoSpeedUp={() => incLogoSpeed()}/>
-        <header className="App-header">
-          <Logo speed={logoSpeed}/>
-        </header>
-      </div> */
