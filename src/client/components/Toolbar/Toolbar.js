@@ -27,6 +27,9 @@ const Toolbar = (props) => {
             submit = 'false';
             blog = 'isActive';
             break;
+
+        default:
+            null;
     }
 
     return (

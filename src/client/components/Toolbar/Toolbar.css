@@ -20,37 +20,15 @@
 }
 
 .h1:hover{
-    color: white;
+    color: white ;
 }
-
-/* .HomePage {
-    display: flex;
-    color: red; 
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 20px;
-    font-size: xx-large;
-    font-weight: bolder;
-    text-decoration: none;
-}
-
-.SubmitBlog {
-    display: flex;
-    color: red; 
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 20px;
-    font-size: xx-large;
-    font-weight: bolder;
-    text-decoration: none;
-} */
 
 .false {
     
 }
 
 .isActive {
-    color:red;
+    color: #4197b1;
 }
 
 .Dropdown-menu {
