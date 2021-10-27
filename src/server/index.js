@@ -44,10 +44,6 @@ mongoose
   .then(() => console.log(`Mongo connected @ ${db}`))
   .catch((err) => console.log(err));
 
-app.get("/api", (req, res) => {
-  res.send({ response: "Hello World!" });
-});
-
 app.post("/blogger", (req, res) => {
   const newBlogger = new Blogger({
     name: req.body.name,

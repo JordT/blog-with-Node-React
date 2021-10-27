@@ -8,6 +8,7 @@ export default function DBPostForm(props) {
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
   var [blogText, setBlogText] = React.useState("");
+  var [id, setID] = React.useState("");
 
   const blogger = {
     "name": name,
@@ -18,7 +19,7 @@ export default function DBPostForm(props) {
 const dbPost = (b) => {
     axios
       .post("http://localhost:3001/blogger", b)
-      .then(() => console.log("User Created"));
+      .then((res) => {setID(res.data._id)});
   };
 
   const handleSubmit = (event) => {
@@ -81,6 +82,7 @@ const dbPost = (b) => {
         <div>
         <input type="submit" value="Submit" className="SubmitButton"/>
         </div>
+        ID: {id}
       </form>
     </div>
   );
