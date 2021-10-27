@@ -1,12 +1,12 @@
 import React from "react";
 import "./DBGetForm.css";
 import axios from "axios";
+import DisplayBlog from '../DisplayBlog/DisplayBlog'
 
 export default function DBPostForm(props) {
 
   //improvement suggestion - could our state could be stored directly in a blogger object?
   var [id, setID] = React.useState("");
-
   var [name, setName] = React.useState("");
   var [city, setCity] = React.useState("");
 
@@ -28,6 +28,10 @@ export default function DBPostForm(props) {
     // No logo on the submit blog page so I have removed it.
     // props.logoSpeedUp();
   };
+  
+  const displayBlogs = (name, city) => {
+    return <DisplayBlog nameprop={name} cityprop={city} />
+  }
 
   return (
     <div className="DBGetForm">
@@ -51,6 +55,8 @@ export default function DBPostForm(props) {
       <div className="dbDisplay">
         City: {city}
       </div>
+      {/* <DisplayBlog nameprop={name} cityprop={city} /> */}
+      {displayBlogs(name, city)}
     </div>
   );
 }
