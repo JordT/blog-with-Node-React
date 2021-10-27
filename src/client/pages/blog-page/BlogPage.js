@@ -3,6 +3,7 @@
 import React from "react";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import DBGetForm from '../../components/DBGetForm/DBGetForm';
+import './BlogPage.css'
 import '../../App.css'
 
 

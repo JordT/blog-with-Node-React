@@ -23,7 +23,9 @@ function App() {
         <Route path="/blog">
             <BlogPage activePage={'blog'}/>
         </Route>
-        <Route path="/submitblog" component={SubmitBlog} activePage={'submit'}/>
+        <Route path="/submitblog">
+          <SubmitBlog activePage={'submit'}/>
+        </Route>
         <Route path="/">
           <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()} activePage={'home'}/>
         </Route>

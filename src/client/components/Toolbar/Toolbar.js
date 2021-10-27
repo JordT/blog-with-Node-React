@@ -28,7 +28,7 @@ const Toolbar = (props) => {
             blog = 'isActive';
             break;
     }
-    
+
     return (
         <div className="ToolbarContainer">
             <div class="Dropdown-menu">Menu</div>
