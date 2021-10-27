@@ -65,7 +65,7 @@ const dbPost = (b) => {
           <div className='user-input'>
           <label>
           Your blog:
-          <input
+          <textarea
             type="text"
             name="blog field"
             value={blogText}
