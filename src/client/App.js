@@ -9,6 +9,7 @@ import BlogPage from '../client/pages/blog-page/BlogPage';
 function App() {
 
   const [logoSpeed, setLogoSpeed] = React.useState("App-logo");
+  const [activePage, setActivePage] = React.useState("HomePage");
 
   const incLogoSpeed = () => {
     setLogoSpeed("App-logo1");
@@ -25,7 +26,7 @@ function App() {
         </Route>
         <Route path="/submitblog" component={SubmitBlog}/>
         <Route path="/">
-          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()}/>
+          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()} activePage={"HomePage"}/>
         </Route>
       </Switch>
     </BrowserRouter>

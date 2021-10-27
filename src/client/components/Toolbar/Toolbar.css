@@ -23,6 +23,36 @@
     color: white;
 }
 
+.HomePage {
+    display: flex;
+    color: red; 
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.SubmitBlog {
+    display: flex;
+    color: red; 
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.BlogPage {
+    color: purple;
+}
+
+.HomePage {
+    color:purple
+}
+
 .Dropdown-menu {
     display: none;
 }
