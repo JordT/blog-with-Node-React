@@ -23,7 +23,7 @@
     color: white;
 }
 
-.HomePage {
+/* .HomePage {
     display: flex;
     color: red; 
     text-align: left;
@@ -43,6 +43,14 @@
     font-size: xx-large;
     font-weight: bolder;
     text-decoration: none;
+} */
+
+.false {
+    
+}
+
+.isActive {
+    color:red;
 }
 
 .BlogPage {

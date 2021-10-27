@@ -6,11 +6,11 @@ import DBGetForm from '../../components/DBGetForm/DBGetForm';
 import '../../App.css'
 
 
-const BlogPage = () => {
+const BlogPage = (props) => {
 
     return (
         <div className='App'> 
-        <Toolbar />
+        <Toolbar activePage={props.activePage}/>
         <DBGetForm />
         </div>)
     
