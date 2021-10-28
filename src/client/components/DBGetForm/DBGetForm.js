@@ -2,12 +2,13 @@ import React from "react";
 import "./DBGetForm.css";
 import axios from "axios";
 import DisplayBlog from '../DisplayBlog/DisplayBlog'
+import { render } from "@testing-library/react";
 
 export default function DBPostForm(props) {
 
   //improvement suggestion - could our state could be stored directly in a blogger object?
   var [id, setID] = React.useState("");
-  var [name, setName] = React.useState("");
+  var [name, setName] = React.useState(["test", "test2"]);
   var [city, setCity] = React.useState("");
 
   const dbGet = (id) => {
@@ -30,7 +31,13 @@ export default function DBPostForm(props) {
   };
   
   const displayBlogs = (name, city) => {
-    return <DisplayBlog nameprop={name} cityprop={city} />
+    console.log(name)
+    const render = []
+
+    name.map((name, i)=>{ 
+      return render.push(<DisplayBlog nameprop={name} />)
+    })
+    return render
   }
 
   return (
@@ -55,7 +62,6 @@ export default function DBPostForm(props) {
       <div className="dbDisplay">
         City: {city}
       </div>
-      {/* <DisplayBlog nameprop={name} cityprop={city} /> */}
       {displayBlogs(name, city)}
     </div>
   );
