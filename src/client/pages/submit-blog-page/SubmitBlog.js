@@ -4,11 +4,11 @@ import DBPostForm from "../../components/DBPostForm/DBPostForm";
 import './SubmitBlog.css'
 import '../../App.css'
 
-const SubmitBlog = () => {
+const SubmitBlog = (props) => {
 
     return (
         <div className='App'> 
-            <Toolbar />
+            <Toolbar activePage={props.activePage}/>
             <div>
                 <DBPostForm/>
             </div>   
