@@ -76,6 +76,7 @@ const dbPost = (b) => {
             maxlength="1000"
             spellCheck="true"
             autoCorrect="on"
+            wrap="soft"
           />
         </label>
         </div>
