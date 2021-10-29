@@ -7,6 +7,7 @@ const DisplayBlog = (props) => {
             <div> Name = {props.nameprop}</div>
             <div>City = {props.cityprop}</div>
             <div>Blog = {props.blogprop}</div>
+            <div>{props.err}</div>
         </div>
     )
 }
