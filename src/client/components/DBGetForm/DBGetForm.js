@@ -26,11 +26,18 @@ export default function DBPostForm(props) {
     axios
       .get(`http://localhost:3001/blogger/${id}`)
       .then((res) => {
-        // console.log(response.headers.name + "we're logging line 17")
         setName(res.data.name);
         setCity(res.data.city);
         
-        // setName(res.name);
+        // create array of objects w/ returned blog data
+        const newArray = [...blogData];
+        newArray.push({
+          SampName: res.data.name,
+          SampCity: res.data.city,
+          SampBlog: ""
+        })
+        console.log(newArray) // **** It is adding this to the sample data, but not displaying it... *****//
+        setBlogData(newArray)
       });
       // return console.log(response + " on line 20");
   };
@@ -46,9 +53,9 @@ export default function DBPostForm(props) {
     //mapping through an array of objects to allow mutliple blogs to be returned.
     const render = []
 
-    sampData.map((sampData) => {
-      console.log(sampData.SampName)
-      return render.push(<DisplayBlog nameprop={sampData.SampName} cityprop={sampData.SampCity} blogprop={sampData.SampBlog} />) 
+    sampData.map((blogData) => {
+      console.log(blogData.SampName)
+      return render.push(<DisplayBlog nameprop={blogData.SampName} cityprop={blogData.SampCity} blogprop={blogData.SampBlog} />) 
     })
     return render;
   }
@@ -75,7 +82,7 @@ export default function DBPostForm(props) {
       <div className="dbDisplay">
         City: {city}
       </div>
-      {displayBlogs(sampData)}
+      {displayBlogs(blogData)}
     </div>
   );
 }
