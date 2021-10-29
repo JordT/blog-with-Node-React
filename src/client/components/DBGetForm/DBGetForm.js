@@ -6,7 +6,7 @@ import DisplayBlog from '../DisplayBlog/DisplayBlog'
 export default function DBPostForm(props) {
   const errMsg = 'ERROR: Name not found!'
   var [getName, setGetName] = React.useState("");
-  const [blogData, setBlogData] = React.useState(errMsg)
+  const [blogData, setBlogData] = React.useState([])
 
   const dbGet = (getName) => {
     axios
@@ -16,7 +16,6 @@ export default function DBPostForm(props) {
         const objArr = []
         
         if (res.data.error != null) {
-          console.log('you have reached my if statement')
           return setBlogData(errMsg);
         }
 
@@ -38,13 +37,14 @@ export default function DBPostForm(props) {
   
   const displayBlogs = (data) => {
     // mapping through an array of objects to allow mutliple blogs to be returned.
-    const render = []
-
-    if (blogData === errMsg) {
-      return render.push(<DisplayBlog nameprop='' cityprop='' blogprop='' err={blogData}/>)
+    var render = []
+    const errRender = '';
+    if (data === errMsg) {
+      return render = <DisplayBlog nameprop='' cityprop='' blogprop='' err={errMsg}/>;
     }
+
     data.map((blogData) => {
-      return render.push(<DisplayBlog nameprop={blogData.objName} cityprop={blogData.objCity} blogprop={blogData.objBlog}/>) 
+      return render.push(<DisplayBlog nameprop={blogData.objName} cityprop={blogData.objCity} blogprop={blogData.objBlog} err=''/>) 
     })
 
     return render;
