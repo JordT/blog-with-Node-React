@@ -2,14 +2,25 @@ import React from "react";
 import "./DBGetForm.css";
 import axios from "axios";
 import DisplayBlog from '../DisplayBlog/DisplayBlog'
-import { render } from "@testing-library/react";
 
 export default function DBPostForm(props) {
 
   //improvement suggestion - could our state could be stored directly in a blogger object?
   var [id, setID] = React.useState("");
-  var [name, setName] = React.useState(["test", "test2"]);
+  var [name, setName] = React.useState(["test1", "test2"]); // mock data for testing
   var [city, setCity] = React.useState("");
+  const [blogData, setBlogData] = React.useState([])
+
+  // sample input object
+  const sampData = [
+    {SampName: "Test1",
+    SampCity: "test1",
+    SampBlog: "This is my blog"
+  },
+    {SampName: "Test2",
+    SampCity: "Test2",
+    SampBlog: "This is my second blog"
+  }];
 
   const dbGet = (id) => {
     axios
@@ -18,6 +29,7 @@ export default function DBPostForm(props) {
         // console.log(response.headers.name + "we're logging line 17")
         setName(res.data.name);
         setCity(res.data.city);
+        
         // setName(res.name);
       });
       // return console.log(response + " on line 20");
@@ -30,14 +42,15 @@ export default function DBPostForm(props) {
     // props.logoSpeedUp();
   };
   
-  const displayBlogs = (name, city) => {
-    console.log(name)
+  const displayBlogs = (sampData, i) => {
+    //mapping through an array of objects to allow mutliple blogs to be returned.
     const render = []
 
-    name.map((name, i)=>{ 
-      return render.push(<DisplayBlog nameprop={name} />)
+    sampData.map((sampData) => {
+      console.log(sampData.SampName)
+      return render.push(<DisplayBlog nameprop={sampData.SampName} cityprop={sampData.SampCity} blogprop={sampData.SampBlog} />) 
     })
-    return render
+    return render;
   }
 
   return (
@@ -62,7 +75,7 @@ export default function DBPostForm(props) {
       <div className="dbDisplay">
         City: {city}
       </div>
-      {displayBlogs(name, city)}
+      {displayBlogs(sampData)}
     </div>
   );
 }
