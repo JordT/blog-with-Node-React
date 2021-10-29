@@ -24,20 +24,24 @@ export default function DBPostForm(props) {
     axios
       .get(`http://localhost:3001/blogger/${id}`)
       .then((res) => {
-        console.log(res)
-        setName(res.data.name);
-        setCity(res.data.city);
+        // console.log(res)
+        // console.log(res.data[0].city)
+        // console.log(res.data[1].city)
         
-        // create array of objects w/ returned blog data
-        const newArray = [];
-        newArray.push({ 
-          SampName: res.data.name,
-          SampCity: res.data.city,
-          SampBlog: ""
+        const data = res.data
+        const objArr = []
+
+        data.map((arr) => {
+          objArr.push({
+            SampName: arr.name,
+            SampCity: arr.city,
+            SampBlog: arr.blog
+          })
+          // console.log("City = ")
+          // console.log(arr.city)
         })
-        console.log(newArray) // **** It is adding this to the sample data, but not displaying it... *****//
-        setBlogData(newArray)
-      });
+        setBlogData(objArr)
+      }); 
   };
 
   const handleSubmit = (event) => {
