@@ -10,7 +10,7 @@ export default function DBPostForm(props) {
   var [name, setName] = React.useState(["test1", "test2"]); // mock data for testing
   var [city, setCity] = React.useState("");
   const [blogData, setBlogData] = React.useState([
-  {
+    {
     SampName: "test1",
     SampCity: "This is my city"
   },
@@ -24,6 +24,7 @@ export default function DBPostForm(props) {
     axios
       .get(`http://localhost:3001/blogger/${id}`)
       .then((res) => {
+        console.log(res)
         setName(res.data.name);
         setCity(res.data.city);
         
@@ -51,7 +52,7 @@ export default function DBPostForm(props) {
     const render = []
 
     data.map((blogData) => {
-      console.log(blogData.SampName)
+      // console.log(blogData.SampName)
       return render.push(<DisplayBlog nameprop={blogData.SampName} cityprop={blogData.SampCity} blogprop={blogData.SampBlog} />) 
     })
     return render;
