@@ -1,33 +1,44 @@
 import React from "react";
 import "./DBGetForm.css";
 import axios from "axios";
+import DisplayBlog from '../DisplayBlog/DisplayBlog'
 
 export default function DBPostForm(props) {
 
-  //improvement suggestion - could our state could be stored directly in a blogger object?
-  var [id, setID] = React.useState("");
+  var [getName, setGetName] = React.useState("");
+  const [blogData, setBlogData] = React.useState([])
 
-  var [name, setName] = React.useState("");
-  var [city, setCity] = React.useState("");
-
-  const dbGet = (id) => {
+  const dbGet = (getName) => {
     axios
-      .get(`http://localhost:3001/blogger/${id}`)
+      .get(`http://localhost:3001/blogger/${getName}`)
       .then((res) => {
-        // console.log(response.headers.name + "we're logging line 17")
-        setName(res.data.name);
-        setCity(res.data.city);
-        // setName(res.name);
-      });
-      // return console.log(response + " on line 20");
+        const data = res.data
+        const objArr = []
+
+        data.map((arr) => {
+          objArr.push({
+            objName: arr.name,
+            objCity: arr.city,
+            objBlog: arr.blogText
+          })
+        })
+        return setBlogData(objArr)
+      });   
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();   
-    dbGet(id);
-    // No logo on the submit blog page so I have removed it.
-    // props.logoSpeedUp();
+  const handleSubmit = (e) => {
+    e.preventDefault();   
+    dbGet(getName);
   };
+  
+  const displayBlogs = (data) => {
+    // mapping through an array of objects to allow mutliple blogs to be returned.
+    const render = []
+    data.map((blogData) => {
+      return render.push(<DisplayBlog nameprop={blogData.objName} cityprop={blogData.objCity} blogprop={blogData.objBlog} />) 
+    })
+    return render;
+  }
 
   return (
     <div className="DBGetForm">
@@ -37,20 +48,15 @@ export default function DBPostForm(props) {
           Blogger ID:
           <input
             type="id"
-            name="id"
-            value={id}
-            onChange={(n) => setID(n.target.value)}
+            name="getName"
+            value={getName}
+            onChange={(n) => setGetName(n.target.value)}
             required
           />
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <div className="dbDisplay">
-        Name: {name}
-      </div>
-      <div className="dbDisplay">
-        City: {city}
-      </div>
+      {displayBlogs(blogData)}
     </div>
   );
 }

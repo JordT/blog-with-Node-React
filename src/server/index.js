@@ -42,7 +42,7 @@ app.use(bodyParser.json());
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log(`Mongo connected @ ${db}`))
-  .catch((err) => console.log(err));
+  .catch(err => console.log(err));
 
 app.post("/blogger", (req, res) => {
   const newBlogger = new Blogger({
@@ -52,28 +52,42 @@ app.post("/blogger", (req, res) => {
   });
 
   Blogger.create(newBlogger)
-    .then(function (dbProduct) {
-      console.log(dbProduct);
-      res.json(dbProduct);
+    .then( dbProduct => {
+      console.log(dbProduct)
+      res.json(dbProduct)
     })
-    .catch(function (err) {
-      console.log(err);
-      res.json(err);
+    .catch( err => {
+      console.log(err)
+      res.json(err)
     });
 });
 
-app.get("/blogger/:id", (req, res) => {
-  Blogger.findOne({ _id: req.params.id })
-    .then(function (dbProduct) {
-      console.log(dbProduct);
-      res.json(dbProduct);
+// Find one DB entry based on id
+app.get("/blogger/:name", (req, res) => {
+  Blogger.find({ name: req.params.name })
+    .then( dbProduct => {
+      console.log(dbProduct)
+      res.json(dbProduct)
     })
-    .catch((err) => {
+    .catch( err => {
       console.log("[server/index.js] Incorrect ID submitted")
-      // console.log(err);
-      res.json(err);
-    });
+      res.json(err)
+    })
 });
+
+// Find one DB entry based on id
+// app.get("/blogger/:id", (req, res) => {
+//   Blogger.findOne({ _id: req.params.id })
+//     .then(function (dbProduct) {
+//       console.log(dbProduct);
+//       res.json(dbProduct);
+//     })
+//     .catch((err) => {
+//       console.log("[server/index.js] Incorrect ID submitted")
+//       // console.log(err);
+//       res.json(err);
+//     });
+// });
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
