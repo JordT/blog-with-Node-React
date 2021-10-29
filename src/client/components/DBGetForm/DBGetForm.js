@@ -9,18 +9,16 @@ export default function DBPostForm(props) {
   var [id, setID] = React.useState("");
   var [name, setName] = React.useState(["test1", "test2"]); // mock data for testing
   var [city, setCity] = React.useState("");
-  const [blogData, setBlogData] = React.useState([])
-
-  // sample input object
-  const sampData = [
-    {SampName: "Test1",
-    SampCity: "test1",
-    SampBlog: "This is my blog"
+  const [blogData, setBlogData] = React.useState([
+  {
+    SampName: "test1",
+    SampCity: "This is my city"
   },
-    {SampName: "Test2",
-    SampCity: "Test2",
-    SampBlog: "This is my second blog"
-  }];
+  {
+    SampName: "Test1",
+    SampCity: "This is my other city"
+  }
+  ])
 
   const dbGet = (id) => {
     axios
@@ -30,8 +28,8 @@ export default function DBPostForm(props) {
         setCity(res.data.city);
         
         // create array of objects w/ returned blog data
-        const newArray = [...blogData];
-        newArray.push({
+        const newArray = [];
+        newArray.push({ 
           SampName: res.data.name,
           SampCity: res.data.city,
           SampBlog: ""
@@ -39,7 +37,6 @@ export default function DBPostForm(props) {
         console.log(newArray) // **** It is adding this to the sample data, but not displaying it... *****//
         setBlogData(newArray)
       });
-      // return console.log(response + " on line 20");
   };
 
   const handleSubmit = (event) => {
@@ -49,11 +46,11 @@ export default function DBPostForm(props) {
     // props.logoSpeedUp();
   };
   
-  const displayBlogs = (sampData, i) => {
+  const displayBlogs = (data, i) => {
     //mapping through an array of objects to allow mutliple blogs to be returned.
     const render = []
 
-    sampData.map((blogData) => {
+    data.map((blogData) => {
       console.log(blogData.SampName)
       return render.push(<DisplayBlog nameprop={blogData.SampName} cityprop={blogData.SampCity} blogprop={blogData.SampBlog} />) 
     })
