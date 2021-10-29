@@ -67,8 +67,12 @@ app.get("/blogger/:name", (req, res) => {
   Blogger.find({ name: req.params.name })
     .then( dbProduct => {
       console.log(dbProduct)
-      res.json(dbProduct)
-    })
+      if (dbProduct.length < 1) {
+        res.json({error: 'The name cannot be found'})
+      }
+      else {
+        res.json(dbProduct)
+    }})
     .catch( err => {
       console.log("[server/index.js] Incorrect ID submitted")
       res.json(err)
