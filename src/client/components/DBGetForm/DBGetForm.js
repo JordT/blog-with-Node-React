@@ -5,59 +5,37 @@ import DisplayBlog from '../DisplayBlog/DisplayBlog'
 
 export default function DBPostForm(props) {
 
-  //improvement suggestion - could our state could be stored directly in a blogger object?
-  var [id, setID] = React.useState("");
-  var [name, setName] = React.useState(["test1", "test2"]); // mock data for testing
-  var [city, setCity] = React.useState("");
-  const [blogData, setBlogData] = React.useState([
-    {
-    SampName: "test1",
-    SampCity: "This is my city"
-  },
-  {
-    SampName: "Test1",
-    SampCity: "This is my other city"
-  }
-  ])
+  var [getName, setGetName] = React.useState("");
+  const [blogData, setBlogData] = React.useState([])
 
-  const dbGet = (id) => {
+  const dbGet = (getName) => {
     axios
-      .get(`http://localhost:3001/blogger/${id}`)
+      .get(`http://localhost:3001/blogger/${getName}`)
       .then((res) => {
-        // console.log(res)
-        // console.log(res.data[0].city)
-        // console.log(res.data[1].city)
-        
         const data = res.data
         const objArr = []
 
         data.map((arr) => {
           objArr.push({
-            SampName: arr.name,
-            SampCity: arr.city,
-            SampBlog: arr.blog
+            objName: arr.name,
+            objCity: arr.city,
+            objBlog: arr.blogText
           })
-          // console.log("City = ")
-          // console.log(arr.city)
         })
-        setBlogData(objArr)
-      }); 
+        return setBlogData(objArr)
+      });   
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();   
-    dbGet(id);
-    // No logo on the submit blog page so I have removed it.
-    // props.logoSpeedUp();
+  const handleSubmit = (e) => {
+    e.preventDefault();   
+    dbGet(getName);
   };
   
-  const displayBlogs = (data, i) => {
-    //mapping through an array of objects to allow mutliple blogs to be returned.
+  const displayBlogs = (data) => {
+    // mapping through an array of objects to allow mutliple blogs to be returned.
     const render = []
-
     data.map((blogData) => {
-      // console.log(blogData.SampName)
-      return render.push(<DisplayBlog nameprop={blogData.SampName} cityprop={blogData.SampCity} blogprop={blogData.SampBlog} />) 
+      return render.push(<DisplayBlog nameprop={blogData.objName} cityprop={blogData.objCity} blogprop={blogData.objBlog} />) 
     })
     return render;
   }
@@ -70,20 +48,14 @@ export default function DBPostForm(props) {
           Blogger ID:
           <input
             type="id"
-            name="id"
-            value={id}
-            onChange={(n) => setID(n.target.value)}
+            name="getName"
+            value={getName}
+            onChange={(n) => setGetName(n.target.value)}
             required
           />
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <div className="dbDisplay">
-        Name: {name}
-      </div>
-      <div className="dbDisplay">
-        City: {city}
-      </div>
       {displayBlogs(blogData)}
     </div>
   );
