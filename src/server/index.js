@@ -64,7 +64,7 @@ app.post("/blogger", (req, res) => {
 
 // Find one DB entry based on id
 app.get("/blogger/:name", (req, res) => {
-  Blogger.findOne({ name: req.params.name })
+  Blogger.find({ name: req.params.name })
     .then( dbProduct => {
       console.log(dbProduct)
       res.json(dbProduct)
