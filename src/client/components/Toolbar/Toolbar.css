@@ -20,7 +20,15 @@
 }
 
 .h1:hover{
-    color: white;
+    color: white ;
+}
+
+.false {
+    
+}
+
+.isActive {
+    color: #4197b1;
 }
 
 .Dropdown-menu {

@@ -21,11 +21,13 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/blog">
-            <BlogPage />
+            <BlogPage activePage={'blog'}/>
         </Route>
-        <Route path="/submitblog" component={SubmitBlog}/>
+        <Route path="/submitblog">
+          <SubmitBlog activePage={'submit'}/>
+        </Route>
         <Route path="/">
-          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()}/>
+          <HomePage speed={logoSpeed} logoSpeedUp={() => incLogoSpeed()} activePage={'home'}/>
         </Route>
       </Switch>
     </BrowserRouter>

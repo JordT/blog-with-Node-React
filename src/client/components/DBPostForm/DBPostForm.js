@@ -65,7 +65,7 @@ const dbPost = (b) => {
           <div className='user-input'>
           <label>
           Your blog:
-          <input
+          <textarea
             type="text"
             name="blog field"
             value={blogText}
@@ -76,6 +76,7 @@ const dbPost = (b) => {
             maxlength="1000"
             spellCheck="true"
             autoCorrect="on"
+            wrap="soft"
           />
         </label>
         </div>

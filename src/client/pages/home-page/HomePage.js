@@ -10,7 +10,7 @@ const HomePage = (props) => {
 
     return (
         <div className="App"> 
-            <Toolbar />
+            <Toolbar activePage={props.activePage}/>
             <header className="App-header">
                 <Logo speed={props.speed} />
             </header>
