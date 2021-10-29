@@ -38,7 +38,7 @@ export default function DBPostForm(props) {
   const displayBlogs = (data) => {
     // mapping through an array of objects to allow mutliple blogs to be returned.
     var render = []
-    const errRender = '';
+    
     if (data === errMsg) {
       return render = <DisplayBlog nameprop='' cityprop='' blogprop='' err={errMsg}/>;
     }
