@@ -5,10 +5,12 @@ const DisplayBlog = (props) => {
     
     if (props.nameprop.length > 1) {
     return (
-        <div>
-            <div> Name = {props.nameprop}</div>
-            <div>City = {props.cityprop}</div>
-            <div>Blog = {props.blogprop}</div>
+        <div className="blogContainer">
+            <div className="indBlog">
+                <div className="x">Name = {props.nameprop}</div>
+                <div className="x">City = {props.cityprop}</div>
+                <div className="x">Blog = {props.blogprop}</div>
+            </div>
         </div>
     )}
     return (<div>{props.err}</div>) 
