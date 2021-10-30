@@ -25,8 +25,6 @@ const dbPost = (b) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dbPost(blogger);
-    // No logo on the submit blog page so I have removed it.
-    // props.logoSpeedUp();
   };
 
   return (
