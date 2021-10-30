@@ -4,7 +4,8 @@
     flex-direction:column;
     width: 30vw;
     flex-wrap: wrap;
-    height: 20vh;
+    min-height: 15vh;
+    max-height: 30vh;
   } 
 
 .indBlog {
