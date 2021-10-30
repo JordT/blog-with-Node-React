@@ -5,10 +5,16 @@ import axios from "axios";
 export default function DBPostForm(props) {
 
   //improvement suggestion - could our state could be stored directly in a blogger object?
-  var [name, setName] = React.useState("");
-  var [city, setCity] = React.useState("");
-  var [blogText, setBlogText] = React.useState("");
-  var [id, setID] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [city, setCity] = React.useState("");
+  const [blogText, setBlogText] = React.useState("");
+  const [id, setID] = React.useState("");
+  const [category, setCategory] = React.useState('');
+
+  const handleCategoryChange = (category) => {
+     setCategory(category);
+     console.log(category);
+ }
 
   const blogger = {
     "name": name,
@@ -49,15 +55,14 @@ const dbPost = (b) => {
         <div className='user-input'>
           <label>
           City:_____
-          <input
-            type="text"
-            name="city field"
-            value={city}
-            onChange={(c) => setCity(c.target.value)}
-            className='input-box'
-            placeholder="Enter where you live"
-            maxlength="25"
-          />
+          <select name="category" className='input-box' value={city} onChange={event => setCity(event.target.value)}>
+            <option id="0" selected disabled >Choose a city from the drop down list...</option>
+            <option id="1" >Glasgow</option>
+            <option id="2" >Edinburgh</option>
+            <option id="3" >San Francisco</option>
+            <option id="4" >Los Angeles</option>
+            <option id="5" >London</option>
+          </select>
           </label>
           </div>
           <div className='user-input'>
