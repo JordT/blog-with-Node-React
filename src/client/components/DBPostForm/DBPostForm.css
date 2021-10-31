@@ -2,6 +2,7 @@
     color: #61dafb;
     text-align: center;
     padding: 100px 0px 0px 0px;
+    min-height: 100vh;
   }
 
   .small-input {
@@ -29,6 +30,10 @@
     color:white;
     border-radius: 5px;
     border: 0;
+  }
+
+  .PostHeader {
+    color:lightgray
   }
 
   select{

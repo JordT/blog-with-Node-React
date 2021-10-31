@@ -35,7 +35,7 @@ const dbPost = (b) => {
 
   return (
     <div className="DBPostForm">
-      <h3>Submit a blog!</h3>
+      <h3 className='PostHeader'>Submit a blog!</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
