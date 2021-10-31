@@ -9,12 +9,7 @@ export default function DBPostForm(props) {
   const [city, setCity] = React.useState("");
   const [blogText, setBlogText] = React.useState("");
   const [id, setID] = React.useState("");
-  const [category, setCategory] = React.useState('');
 
-  const handleCategoryChange = (category) => {
-     setCategory(category);
-     console.log(category);
- }
 
   const blogger = {
     "name": name,
