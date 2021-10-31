@@ -54,15 +54,15 @@ const dbPost = (b) => {
         </div>
         <div className='user-input'>
           <label>
-          City:_____
-          <select name="category" className='input-box' value={city} onChange={event => setCity(event.target.value)}>
-            <option id="0" selected disabled >Choose a city from the drop down list...</option>
-            <option id="1" >Glasgow</option>
-            <option id="2" >Edinburgh</option>
-            <option id="3" >San Francisco</option>
-            <option id="4" >Los Angeles</option>
-            <option id="5" >London</option>
-          </select>
+            City:_____
+            <select name="category" className='input-box' value={city} onChange={event => setCity(event.target.value)}>
+              <option id="0" selected disabled value=''>Choose a city from the drop down list...</option>
+              <option id="1" >Glasgow</option>
+              <option id="2" >Edinburgh</option>
+              <option id="3" >San Francisco</option>
+              <option id="4" >Los Angeles</option>
+              <option id="5" >London</option>
+            </select>
           </label>
           </div>
           <div className='user-input'>
