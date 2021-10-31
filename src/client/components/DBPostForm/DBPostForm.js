@@ -9,12 +9,7 @@ export default function DBPostForm(props) {
   const [city, setCity] = React.useState("");
   const [blogText, setBlogText] = React.useState("");
   const [id, setID] = React.useState("");
-  const [category, setCategory] = React.useState('');
 
-  const handleCategoryChange = (category) => {
-     setCategory(category);
-     console.log(category);
- }
 
   const blogger = {
     "name": name,
@@ -35,27 +30,25 @@ const dbPost = (b) => {
 
   return (
     <div className="DBPostForm">
-      <h3>Submit a blog!</h3>
+      <h3 className='PostHeader'>Submit a blog!</h3>
       <form onSubmit={handleSubmit}>
-        <div className='user-input'>
+        <div>
           <label>
-          Name:___
           <input
             type="text"
             name="name field"
             value={name}
             onChange={(n) => setName(n.target.value)}
-            className='input-box'
+            className='small-input'
             required
             placeholder="Enter your name"
             maxlength="25"
           />
         </label>
         </div>
-        <div className='user-input'>
+        <div>
           <label>
-            City:_____
-            <select name="category" className='input-box' value={city} onChange={event => setCity(event.target.value)}>
+            <select name="category" className='small-input' value={city} onChange={event => setCity(event.target.value)}>
               <option id="0" selected disabled value=''>Choose a city from the drop down list...</option>
               <option id="1" >Glasgow</option>
               <option id="2" >Edinburgh</option>
@@ -65,15 +58,14 @@ const dbPost = (b) => {
             </select>
           </label>
           </div>
-          <div className='user-input'>
+          <div>
           <label>
-          Your blog:
           <textarea
             type="text"
             name="blog field"
             value={blogText}
             onChange={(c) => setBlogText(c.target.value)}
-            className='input-box-blogtext'
+            className='large-input'
             required
             placeholder="Enter your blog here..."
             maxlength="1000"
@@ -86,7 +78,7 @@ const dbPost = (b) => {
         <div>
         <input type="submit" value="Submit" className="SubmitButton"/>
         </div>
-        ID: {id}
+        {id}
       </form>
     </div>
   );
