@@ -1,14 +1,36 @@
  .DBPostForm {
     color: #61dafb;
-    text-align: left;
-    padding-left: 25px;
+    text-align: center;
+    padding: 100px 0px 0px 0px;
   }
 
-  .input-box-blogtext {
-    width: 40vw;
+  .small-input {
+    width: 30%;
+    height: 7.5%;
+    background-color: darkslategray;
+    color:white;
+    border-radius: 5px;
+  }
+
+  .large-input {
+    width: 30%;
     height: 20vh;
+    color:white;
+    border-radius: 5px;
+    background-color: darkslategray;
   }
 
-  .input-box {
-    width: 40vw;
+  .SubmitButton {
+    width: 100px;
+    height: 30px;
+    background-color: darkslategray;
+    border-radius: 5px;
   }
+
+  select{
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='%23444' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+}
