@@ -1,1 +1,23 @@
-/* for later */
+.blogContainer {
+    background-color: #282c34;
+    display: flex;
+    flex-direction:column;
+    width: 30vw;
+    flex-wrap: wrap;
+    min-height: 15vh;
+    max-height: 30vh;
+  } 
+
+.indBlog {
+    display: flex;
+    flex-direction: column;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+}
+
+.x {
+    color:white;
+    background-color: #235463;
+    max-height: 19vh;
+} 
+

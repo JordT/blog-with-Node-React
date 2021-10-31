@@ -66,7 +66,9 @@ export default function DBPostForm(props) {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      {displayBlogs(blogData)}
+      <div className="displayBlogContainer">
+        {displayBlogs(blogData)}
+      </div>
     </div>
   );
 }
