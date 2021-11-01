@@ -11,6 +11,10 @@ const HomePage = (props) => {
     return (
         <div className="App"> 
             <Toolbar activePage={props.activePage}/>
+            <p className="whitetext">This simple blog application allows users to submit a blog post and return blogs by author.</p>
+            <p className="whitetext">It was created by <a className="whitetext" href="https://github.com/JordT">Jordan</a> and <a className="whitetext" href="https://github.com/mr-jackpot">Adam</a> as a learning using the popular MERN stack</p>
+            <p className="whitetext">You can see the code behind this site <a className="whitetext" href="">here.</a></p>
+            <p className="whitetext">Please note, as a learning exercise this is not production grade code. It therefore doesn't include unit unit testing etc.</p>
             <header className="App-header">
                 <Logo speed={props.speed} />
             </header>
