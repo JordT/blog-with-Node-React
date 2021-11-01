@@ -2,8 +2,8 @@ import React from "react";
 import './DisplayBlog.css'
 
 const DisplayBlog = (props) => {
-    
-    if (props.nameprop.length > 1) {
+
+    if (props.nameprop.length > 0) {
     return (
         <div className="blogContainer">
             <div className="indBlog">
