@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "concurrently \"nodemon ./src/server/index.js\" \"react-scripts start\"",
+    "start:dev": "\"nodemon ./src/server/index.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
