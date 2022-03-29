@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses the popular MERN (MongoDb, Express, React, Node) to allow users to submit, and display blogs.
 
+## Naming conventions
+
+brancName
+[feat/bug/fix/etc]/description
+
+commit
+[branchNameWithNoDesc]:short-description
+
+
 ## Available Scripts
 
 In the project directory, you can run:
